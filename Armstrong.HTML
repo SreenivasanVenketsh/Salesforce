@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Armstrong</title>
+</head>
+<body onload="findAmstrong(153)">
+    <div id="display"></div>
+    <script>
+        
+        function findAmstrong(num){
+            let temp2 = num;
+            sum =0;
+            while(num >0){
+              temp = num % 10;
+              console.log(temp)
+              sum+= temp * temp*temp;
+              num = Math.floor(num/10);
+            }
+            console.log(sum);
+            if(temp2== sum){
+                document.getElementById('display').innerHTML = 'Amstrong Number';
+            }
+            else{
+                document.getElementById('display').innerHTML = 'Not a Amstrong Number';
+  
+            }
+
+        }
+    </script>
+</body>
+</html>
