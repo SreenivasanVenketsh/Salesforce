@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Example</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        <tbody id="tableBody">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        const arr = [['David', 80], ['Vinoth', 77], ['Divya', 88], ['Ishitha', 95], ['Thomas', 68]];
+        let avg = 0;
+
+        const tableBody = document.getElementById('tableBody');
+
+        for (let i = 0; i < arr.length; i++) {
+            const row = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            const scoreCell = document.createElement('td');
+            
+            nameCell.textContent = arr[i][0];
+            scoreCell.textContent = arr[i][1];
+
+            row.appendChild(nameCell);
+            row.appendChild(scoreCell);
+
+            tableBody.appendChild(row);
+
+            avg = avg + arr[i][1];
+        }
+
+        console.log('Average Score:', avg / arr.length);
+    </script>
+</body>
+</html>
